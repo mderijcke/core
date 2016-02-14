@@ -1,6 +1,6 @@
 {
   "name": "skira-core",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Basic elements for processing a request.",
   "main": "lib",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/skirajs/core.git"
+    "url": "git+https://github.com/skira-project/core.git"
   },
   "keywords": [
     "skira"
@@ -16,7 +16,7 @@
   "author": "Skira project",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/skirajs/core/issues"
+    "url": "https://github.com/skira-project/core/issues"
   },
-  "homepage": "https://github.com/skirajs/core#readme"
+  "homepage": "https://github.com/skira-project/core#readme"
 }
