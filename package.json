@@ -1,0 +1,22 @@
+{
+  "name": "skira-core",
+  "version": "0.1.0",
+  "description": "Basic elements for processing a request.",
+  "main": "lib",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skirajs/core.git"
+  },
+  "keywords": [
+    "skira"
+  ],
+  "author": "Skira project",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/skirajs/core/issues"
+  },
+  "homepage": "https://github.com/skirajs/core#readme"
+}
