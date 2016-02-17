@@ -1,6 +1,6 @@
 {
   "name": "skira-core",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Basic elements for processing a request.",
   "main": "lib",
   "scripts": {
@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/skira-project/core/issues"
   },
-  "homepage": "https://github.com/skira-project/core#readme"
+  "homepage": "https://github.com/skira-project/core#readme",
+  "dependencies": {
+    "bluebird": "^3.3.1"
+  }
 }
