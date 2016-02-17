@@ -1,6 +1,6 @@
 {
   "name": "skira-core",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Basic elements for processing a request.",
   "main": "lib",
   "scripts": {
@@ -18,8 +18,5 @@
   "bugs": {
     "url": "https://github.com/skira-project/core/issues"
   },
-  "homepage": "https://github.com/skira-project/core#readme",
-  "dependencies": {
-    "eventemitter3-collector": "^1.1.1"
-  }
+  "homepage": "https://github.com/skira-project/core#readme"
 }
