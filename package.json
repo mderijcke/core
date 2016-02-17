@@ -1,6 +1,6 @@
 {
   "name": "skira-core",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "Basic elements for processing a request.",
   "main": "lib",
   "scripts": {
