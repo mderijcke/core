@@ -1,4 +1,6 @@
-## skira-core
+# skira-core
+
+Wrapper around Skira sites for full initialization, url resolving and request processing.
 
 [![NPM Version][npm-image]][npm-url]
 [![Dependency Status][deps-image]][deps-url]
@@ -6,13 +8,11 @@
 [![License][license-image]][license-url]
 [![Chat][chat-image]][chat-url]
 
-Wrapper around Skira sites for full initialization, url resolving and request processing.
-
-### Status
+## Status
 
 Skira is still in active development. We are working towards a final release ASAP (1.0.0) and will then keep the API stable.
 
-### Example
+## Example
 
 ```js
 const Site = require("skira-core")
@@ -27,9 +27,9 @@ site.process(scope).then((scope) => {
 })
 ```
 
-### Contributing
+## Contributing
 
-We recommend installing the JSHint and JSCS plugins into your editor to instantly check your code against the guidelines. This will make pull requests easier for everyone.
+We recommend installing the ESLint and JSCS plugins into your editor to instantly check your code against the guidelines. This will make pull requests easier for everyone.
 
 [npm-image]: https://img.shields.io/npm/v/skira-core.svg
 [npm-url]: https://npmjs.org/package/skira-core
