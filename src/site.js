@@ -15,9 +15,13 @@ function Skira(source) {
 	this.views = source.views
 
 	this.pages = mergePages(source.pages, this.views)
-
 	this.nav = this.importNav(source.nav)
 	this.router = this.createRouter(this.pages)
+
+	if (!this.locales.default) {
+		var keys = Object.keys(this.locales.default)
+		this.locales.default = this.locales.locales[keys[0]]
+	}
 }
 
 Skira.prototype = Object.create(EventEmitter.prototype)

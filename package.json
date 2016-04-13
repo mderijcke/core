@@ -1,6 +1,6 @@
 {
   "name": "skira-core",
-  "version": "0.7.0-3",
+  "version": "0.7.1",
   "description": "Wrapper around Skira sites for full initialization, url resolving and request processing.",
   "main": "lib/site",
   "scripts": {
