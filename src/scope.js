@@ -10,12 +10,23 @@ function Scope(site, page, params) {
 	this.page = page
 	this.params = params || {}
 	this.status = 200
-	this.headers = {
-		"Content-Type": "text/html; charset=utf-8",
-		Connection: "close",
-		Server: "Skira",
-	}
+	this._headers = {}
 	this.locale = site.locales.default
+
+	// Set default headers.
+	this.header("Content-Type", "text/html; charset=utf-8")
+	this.header("Connection", "close")
+	this.header("Server", "Skira")
+}
+
+Scope.prototype.header = function getOrSetHeader(name, value) {
+	name = name.toLowerCase()
+
+	if (typeof value == "undefined") {
+		return this._headers[name]
+	}
+
+	this._headers[name] = "" + value
 }
 
 module.exports = Scope
