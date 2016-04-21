@@ -1,12 +1,12 @@
 module.exports.buildNav = function buildNav(pages) {
-	var nav = {}
+	let nav = {}
 
-	for (var page of Object.values(pages)) {
+	for (let page of Object.values(pages)) {
 		if (!page.navorder) {
 			continue
 		}
 
-		for (var navName in page.navorder) {
+		for (let navName in page.navorder) {
 			if (typeof nav[navName] == "undefined") {
 				nav[navName] = []
 			}
@@ -15,7 +15,7 @@ module.exports.buildNav = function buildNav(pages) {
 		}
 	}
 
-	for (var name in nav) {
+	for (let name in nav) {
 		nav[name].sort((p1, p2) => p1.navorder[name] - p2.navorder[name])
 	}
 

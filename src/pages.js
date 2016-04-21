@@ -1,17 +1,17 @@
 const deepmerge = require("deepmerge")
 
 function getExtends(pages, pageName) {
-	var out = []
+	let out = []
 
 	while (pageName) {
-		var page = pages[pageName]
+		let page = pages[pageName]
 
 		if (!page) {
 			throw new Error("Could not find page to extend: " + pageName)
 		}
 
 		// make sure we're not making circular chains
-		var duplicateIndex = out.indexOf(pageName)
+		let duplicateIndex = out.indexOf(pageName)
 
 		// check for the actual value AFTER pushing so the chain in the
 		// error message actually makes sense
@@ -27,7 +27,7 @@ function getExtends(pages, pageName) {
 	// Output an array of page objects. We can't do this right away because
 	// then we can't easily find circular extensions due to indexOf working
 	// with keys, which are strings.
-	return out.map(pageName => pages[pageName])
+	return out.map((pageName) => pages[pageName])
 }
 
 function mergeMultiple(objects) {
@@ -36,19 +36,19 @@ function mergeMultiple(objects) {
 }
 
 function mergePages(pages) {
-	var fresh = {}
+	let fresh = {}
 
-	for (var pageName in pages) {
-		var page = pages[pageName]
-		var chain = getExtends(pages, pageName)
-		var proto = mergeMultiple(chain.slice(1).reverse()) || {}
+	for (let pageName in pages) {
+		let page = pages[pageName]
+		let chain = getExtends(pages, pageName)
+		let proto = mergeMultiple(chain.slice(1).reverse()) || {}
 
 		proto._name = pageName
 		proto._chain = chain
 
-		var newPage = Object.create(proto)
+		let newPage = Object.create(proto)
 
-		for (var key in page) {
+		for (let key in page) {
 			newPage[key] = page[key]
 		}
 

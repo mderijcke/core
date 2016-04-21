@@ -26,14 +26,14 @@ function Skira(source) {
 Skira.prototype = Object.create(EventEmitter.prototype)
 
 Skira.prototype.mountViews = function mountViews() {
-	for (var page of Object.values(this.pages)) {
+	for (let page of Object.values(this.pages)) {
 		page._views = []
 
 		if (page.hasOwnProperty("view")) {
-			var views = page._chain
-				.map(page => page.view)
+			let views = page._chain
+				.map((page) => page.view)
 				.filter(Boolean)
-				.map(viewName => this.views[viewName])
+				.map((viewName) => this.views[viewName])
 				.filter(Boolean)
 
 			page._views = views
@@ -42,7 +42,7 @@ Skira.prototype.mountViews = function mountViews() {
 }
 
 Skira.prototype.runEvent = async function runEvent(eventName, scope) {
-	var queue = []
+	let queue = []
 
 	this.emit(eventName, scope, queue)
 
@@ -50,11 +50,11 @@ Skira.prototype.runEvent = async function runEvent(eventName, scope) {
 }
 
 Skira.prototype.importModules = function importModules(wrappedModules) {
-	var out = {}
+	let out = {}
 
-	for (var key in wrappedModules) {
-		var fn = wrappedModules[key]
-		var unwrappedModule = fn()
+	for (let key in wrappedModules) {
+		let fn = wrappedModules[key]
+		let unwrappedModule = fn()
 		out[key] = Object.create(unwrappedModule)
 	}
 
@@ -62,7 +62,7 @@ Skira.prototype.importModules = function importModules(wrappedModules) {
 }
 
 Skira.prototype.init = async function init() {
-	var tasks = Object.values(this.modules)
+	let tasks = Object.values(this.modules)
 		.map((mod) => {
 			// Use bind so that we don't start executing anything
 			// in this .map function. Let Promise.all run them all.
@@ -73,11 +73,11 @@ Skira.prototype.init = async function init() {
 
 	await Promise.all(tasks)
 
-	for (var module of Object.values(this.modules)) {
-		for (var hookName in module.hooks || {}) {
-			var handlers = [].concat(module.hooks[hookName])
+	for (let module of Object.values(this.modules)) {
+		for (let hookName in module.hooks || {}) {
+			let handlers = [].concat(module.hooks[hookName])
 
-			for (var handler of handlers) {
+			for (let handler of handlers) {
 				this.on(hookName, handler)
 			}
 		}
@@ -85,7 +85,7 @@ Skira.prototype.init = async function init() {
 }
 
 Skira.prototype.resolve = function request(url) {
-	var match = this.router.match(url)
+	let match = this.router.match(url)
 
 	if (!match || !match.node || !match.node.page) {
 		return
@@ -98,7 +98,7 @@ Skira.prototype.process = async function process(scope) {
 	await this.runEvent("prepare", scope)
 	await this.runEvent("render", scope)
 
-	for (var view of scope.page._views) {
+	for (let view of scope.page._views) {
 		scope.content = view(scope)
 	}
 
