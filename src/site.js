@@ -73,7 +73,7 @@ Skira.prototype.init = async function init() {
 
 	await Promise.all(tasks)
 
-	for (var module of this.modules) {
+	for (var module of Object.values(this.modules)) {
 		for (var hookName in module.hooks || {}) {
 			var handlers = [].concat(module.hooks[hookName])
 
