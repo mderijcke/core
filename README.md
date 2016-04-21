@@ -5,7 +5,6 @@ Wrapper around Skira sites for full initialization, url resolving and request pr
 [![Build Status][ci-image]][ci-url]
 [![Dependency Status][deps-image]][deps-url]
 [![devDependency Status][devdeps-image]][devdeps-url]
-[![License][license-image]][license-url]
 [![Chat][chat-image]][chat-url]
 
 ## Status
@@ -27,9 +26,9 @@ site.process(scope).then((scope) => {
 })
 ```
 
-## Contributing
+## License
 
-We recommend installing the ESLint and JSCS plugins into your editor to instantly check your code against the guidelines. This will make pull requests easier for everyone.
+MIT
 
 [ci-image]: https://img.shields.io/travis/skira-project/core.svg
 [ci-url]: https://travis-ci.org/skira-project/core
@@ -37,7 +36,5 @@ We recommend installing the ESLint and JSCS plugins into your editor to instantl
 [deps-url]: https://david-dm.org/skira-project/core
 [devdeps-image]: https://img.shields.io/david/dev/skira-project/core.svg
 [devdeps-url]: https://david-dm.org/skira-project/core#info=devDependencies
-[license-image]: https://img.shields.io/github/license/skira-project/core.svg
-[license-url]: LICENSE
 [chat-image]: https://img.shields.io/gitter/room/skira-project/skira.svg
 [chat-url]: https://gitter.im/skira-project/skira
