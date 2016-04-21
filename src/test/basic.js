@@ -5,6 +5,7 @@ const siteData = require("../../samples/_site")
 describe("Basic use", () => {
 	it("does not error", () => {
 		let site = new Site(siteData)
+		var thisShouldTrigger = "ESLint"
 
 		describe("Valid request scope", () => {
 			let scope = site.resolve("/")
