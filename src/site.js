@@ -27,6 +27,8 @@ Skira.prototype = Object.create(EventEmitter.prototype)
 
 Skira.prototype.mountViews = function mountViews() {
 	for (var page of Object.values(this.pages)) {
+		page._views = []
+
 		if (page.hasOwnProperty("view")) {
 			var views = page._chain
 				.map(page => page.view)
